@@ -9,3 +9,8 @@ This establishes a many-to-one relationship between "Product" and "Product_Categ
 2. How to ensure each product in the "Product" table has a valid category assigned:
 
 Use a foreign key constraint: Add a foreign key constraint on the category_id column in the "Product" table, referencing the id column in the "Product_Category" table. This ensures that every value in the category_id column of the "Product" table must exist as a primary key in the "Product_Category" table.
+example SQL statement to add a foreign key constraint:
+ALTER TABLE Product
+ADD CONSTRAINT FK_Product_Category
+FOREIGN KEY (category_id)
+REFERENCES Product_Category(id);
